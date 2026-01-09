@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "dist/bin/anvil.js",
   "bin": {
-    "anvil": "./dist/bin/anvil.js"
+    "anvil": "dist/bin/anvil.js"
   },
   "files": [
     "dist",
