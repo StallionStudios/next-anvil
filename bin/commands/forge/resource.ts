@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
-import pluralize from "pluralize";
+import pluralize from "pluralize-esm";
 import {
   indexTemplate,
   formTemplate,
