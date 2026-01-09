@@ -34,20 +34,6 @@ This will create:
 - `src/lib/resources/products/form.ts`
 - `src/lib/resources/products/table.ts`
 
-### Create a User
-
-Create a new user in your database:
-
-```bash
-anvil forge:user
-```
-
-This will prompt you for:
-- Email address
-- Password (hidden input)
-
-### Run Database Migrations
-
 Run Prisma migrations:
 
 ```bash
@@ -59,8 +45,8 @@ This executes `npx prisma migrate dev && npx prisma generate`.
 ## Requirements
 
 - Node.js 18.0.0 or higher
-- A Next.js project with Anvil framework setup
-- Prisma configured (for `forge:user` and `db:migrate` commands)
+- A Next.js project
+- Prisma configured (`db:migrate` commands)
 
 ## License
 
