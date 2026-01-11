@@ -92,7 +92,7 @@ try {
     stdio: "inherit",
     cwd: projectPath,
   });
-  execSync("nnpm install @prisma/client @prisma/adapter-pg pg dotenv", {
+  execSync("npm install @prisma/client @prisma/adapter-pg pg dotenv", {
     stdio: "inherit",
     cwd: projectPath,
   });
