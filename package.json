@@ -1,6 +1,6 @@
 {
   "name": "next-anvil",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "CLI tool for the Anvil framework - a Next.js framework for creating admin dashboards",
   "license": "ISC",
   "author": "Juan Sanchez <juan.sanchez@stallionstudios.net>",
