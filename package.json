@@ -1,18 +1,18 @@
 {
   "name": "next-anvil",
-  "version": "0.3.5",
+  "version": "1.0.0",
   "description": "CLI tool for the Anvil framework - a Next.js framework for creating admin dashboards",
   "license": "ISC",
   "author": "Juan Sanchez <juan.sanchez@stallionstudios.net>",
   "type": "commonjs",
   "main": "dist/bin/anvil.js",
   "exports": {
-    "./fields": "./lib/fields/index.js",
-    "./form": "./lib/form.js",
-    "./table": "./lib/table.js",
-    "./resource": "./lib/resource.js",
-    "./components": "./components/index.js",
-    "./styles.css": "./styles.css"
+    "./fields": "./dist/components/fields/index.js",
+    "./form": "./dist/lib/form.js",
+    "./table": "./dist/lib/table.js",
+    "./resource": "./dist/lib/resource.js",
+    "./components": "./dist/components/fields/index.js",
+    "./styles.css": "./dist/styles.css"
   },
   "bin": {
     "anvil": "dist/bin/anvil.js"
