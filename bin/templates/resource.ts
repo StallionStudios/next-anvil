@@ -1,6 +1,6 @@
 export function indexTemplate(singular: string) {
   return `
-import { defineResource } from "@/lib/anvil/resource";
+import { defineResource } from "next-anvil/resource";
 import form from "./form";
 import table from "./table";
 
@@ -14,8 +14,8 @@ export default defineResource({
 
 export function formTemplate(singular: string) {
   return `
-import { defineFormSchema } from "@/lib/anvil/form";
-import { text } from "@/lib/anvil/fields";
+import { defineFormSchema } from "next-anvil/form";
+import { text } from "next-anvil/fields";
 
 export default defineFormSchema({
   fields: {
@@ -31,7 +31,7 @@ export default defineFormSchema({
 
 export function tableTemplate() {
   return `
-import { defineTableSchema } from "@/lib/anvil/table";
+import { defineTableSchema } from "next-anvil/table";
 
 export default defineTableSchema({
   columns: [
