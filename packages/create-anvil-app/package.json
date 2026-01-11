@@ -1,0 +1,27 @@
+{
+  "name": "create-anvil-app",
+  "version": "0.1.0",
+  "description": "Create a new Next-anvil application",
+  "type": "module",
+  "bin": {
+    "create-anvil-app": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "bootstrap"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build && node ../../scripts/postbuild-create-anvil-app.js"
+  },
+  "dependencies": {
+    "create-next-app": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
