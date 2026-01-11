@@ -3,7 +3,7 @@
  * Server Component - handles data fetching and server actions
  */
 
-import { EditResourceForm } from "@/components/admin/EditResourceForm";
+import { EditResourceForm } from "@/components/anvil/EditResourceForm";
 import { updateRecord, getRecord } from "@/lib/anvil/actions";
 import { AnvilResource } from "@/lib/anvil/resource";
 import { redirect } from "next/navigation";

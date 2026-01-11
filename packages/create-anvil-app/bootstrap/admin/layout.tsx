@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "next-anvil/styles.css";
 
 export default function AdminLayout({
   children,

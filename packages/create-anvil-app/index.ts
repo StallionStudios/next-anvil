@@ -58,10 +58,10 @@ const bootstrapDir = join(__dirname, "..", "bootstrap");
 
 // Copy admin folder to app/admin
 const bootstrapAdminDir = join(bootstrapDir, "admin");
-const targetAdminDir = join(projectPath, "app", "admin");
+const targetAdminDir = join(projectPath, "src", "app", "admin");
 if (existsSync(bootstrapAdminDir)) {
   cpSync(bootstrapAdminDir, targetAdminDir, { recursive: true });
-  console.log("  ✅ Copied admin folder to app/admin");
+  console.log("  ✅ Copied admin folder to src/app/admin");
 }
 
 // Copy components folder to src/components
@@ -73,94 +73,44 @@ if (existsSync(bootstrapComponentsDir)) {
   console.log("  ✅ Copied components folder to src/components");
 }
 
+// Copy actions.ts to anvil/actions.ts
+const bootstrapActionsPath = join(bootstrapDir, "actions.ts");
+const targetActionsDir = join(projectPath, "src", "lib", "anvil");
+if (existsSync(bootstrapActionsPath)) {
+  mkdirSync(targetActionsDir, { recursive: true });
+  cpSync(bootstrapActionsPath, join(targetActionsDir, "actions.ts"));
+  console.log("  ✅ Copied actions.ts to src/lib/anvil/actions.ts");
+}
+
 // Step 3: Add Anvil-specific files and configuration
 console.log("\n🔨 Setting up Anvil configuration...");
 
-// Create lib/resources directory
-const resourcesDir = join(projectPath, "anvil", "resources");
-mkdirSync(resourcesDir, { recursive: true });
-
-// Create .gitkeep to ensure directory exists
-writeFileSync(join(resourcesDir, ".gitkeep"), "");
-
-// Update package.json to add anvil script
-const packageJsonPath = join(projectPath, "package.json");
-const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf-8"));
-
-if (!packageJson.scripts) {
-  packageJson.scripts = {};
+// Step 4: Install Prisma and dependencies
+console.log("\n📦 Installing Prisma and database dependencies...");
+try {
+  execSync("npm install prisma @types/node @types/pg --save-dev", {
+    stdio: "inherit",
+    cwd: projectPath,
+  });
+  execSync("nnpm install @prisma/client @prisma/adapter-pg pg dotenv", {
+    stdio: "inherit",
+    cwd: projectPath,
+  });
+} catch (error) {
+  console.error("Failed to install Prisma:", error);
+  process.exit(1);
 }
 
-packageJson.scripts.anvil = "anvil";
-
-writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + "\n");
-
-// Create app layout with Anvil styles import
-const appLayoutPath = join(projectPath, "app", "layout.tsx");
-if (existsSync(appLayoutPath)) {
-  let layoutContent = readFileSync(appLayoutPath, "utf-8");
-  
-  // Add Anvil styles import if not already present
-  if (!layoutContent.includes("next-anvil/styles.css")) {
-    // Find the last import statement
-    const lastImportIndex = layoutContent.lastIndexOf("import");
-    const nextLineAfterLastImport = layoutContent.indexOf("\n", lastImportIndex) + 1;
-    
-    layoutContent =
-      layoutContent.slice(0, nextLineAfterLastImport) +
-      'import "next-anvil/styles.css";\n' +
-      layoutContent.slice(nextLineAfterLastImport);
-    
-    writeFileSync(appLayoutPath, layoutContent);
-  }
+// Step 5: Initialize Prisma client
+console.log("\n🔧 Initializing Prisma client...");
+try {
+  execSync("npx prisma init", {
+    stdio: "inherit",
+    cwd: projectPath,
+  });
+} catch (error) {
+  console.warn("⚠️  Prisma initialization failed.");
 }
-
-// Create example .env.local with Prisma DATABASE_URL
-const envLocalPath = join(projectPath, ".env.local");
-if (!existsSync(envLocalPath)) {
-  writeFileSync(
-    envLocalPath,
-    `# Database
-DATABASE_URL="postgresql://user:password@localhost:5432/anvil?schema=public"
-
-# Next.js
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-`
-  );
-}
-
-// Create example prisma schema
-const prismaDir = join(projectPath, "prisma");
-mkdirSync(prismaDir, { recursive: true });
-
-const prismaSchemaPath = join(prismaDir, "schema.prisma");
-if (!existsSync(prismaSchemaPath)) {
-  writeFileSync(
-    prismaSchemaPath,
-    `// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
-// Example model - customize as needed
-model User {
-  id        String   @id @default(cuid())
-  name      String
-  email     String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-`
-  );
-}
-
 
 console.log("\n✅ Anvil setup complete!");
 console.log("\n📝 Next steps:");
