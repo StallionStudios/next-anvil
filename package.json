@@ -1,6 +1,6 @@
 {
   "name": "next-anvil",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "CLI tool for the Anvil framework - a Next.js framework for creating admin dashboards",
   "license": "ISC",
   "author": "Juan Sanchez <juan.sanchez@stallionstudios.net>",
@@ -37,9 +37,7 @@
     "prisma"
   ],
   "dependencies": {
-    "bcryptjs": "^3.0.3",
     "commander": "^14.0.2",
-    "dotenv": "^16.4.5",
     "pluralize-esm": "^9.0.5"
   },
   "peerDependencies": {
