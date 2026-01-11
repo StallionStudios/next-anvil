@@ -1,6 +1,6 @@
-import { FieldOptions } from "./fields/types";
+import { FieldSchema } from "./fields/types";
 
-export type FormFields = Record<string, FieldOptions>;
+export type FormFields = Record<string, FieldSchema>;
 
 export interface FormSchema {
   fields: FormFields;

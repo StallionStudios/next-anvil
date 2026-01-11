@@ -1,13 +1,13 @@
 /**
  * Core types for the admin framework
  */
-import type { TextFieldOptions } from "./text";
-import type { EmailFieldOptions } from "./email";
-import type { SelectFieldOptions } from "./select";
-import type { DateFieldOptions } from "./date";
-import type { NumberFieldOptions } from "./number";
-import type { TextareaFieldOptions } from "./textarea";
-import type { HiddenFieldOptions } from "./hidden";
+import type { TextFieldOptions, TextFieldSchema } from "./text";
+import type { EmailFieldOptions, EmailFieldSchema } from "./email";
+import type { SelectFieldOptions, SelectFieldSchema } from "./select";
+import type { DateFieldOptions, DateFieldSchema } from "./date";
+import type { NumberFieldOptions, NumberFieldSchema } from "./number";
+import type { TextareaFieldOptions, TextareaFieldSchema } from "./textarea";
+import type { HiddenFieldOptions, HiddenFieldSchema } from "./hidden";
 
 export type FieldType =
   | "text"
@@ -48,11 +48,6 @@ export interface BaseFieldOptions {
   size?: FieldSize;
 }
 
-export type FieldOptions =
-  | TextFieldOptions
-  | EmailFieldOptions
-  | SelectFieldOptions
-  | DateFieldOptions
-  | NumberFieldOptions
-  | TextareaFieldOptions
-  | HiddenFieldOptions;
+export type FieldOptions = TextFieldOptions | EmailFieldOptions | SelectFieldOptions | DateFieldOptions | NumberFieldOptions | TextareaFieldOptions | HiddenFieldOptions;
+
+export type FieldSchema = TextFieldSchema | EmailFieldSchema | SelectFieldSchema | DateFieldSchema | NumberFieldSchema | TextareaFieldSchema | HiddenFieldSchema
