@@ -5,7 +5,7 @@
 
 import { EditResourceForm } from "@/components/anvil/EditResourceForm";
 import { updateRecord, getRecord } from "@/lib/anvil/actions";
-import { AnvilResource } from "@/lib/anvil/resource";
+import { AnvilResource } from "next-anvil/resource";
 import { redirect } from "next/navigation";
 import { notFound } from "next/navigation";
 

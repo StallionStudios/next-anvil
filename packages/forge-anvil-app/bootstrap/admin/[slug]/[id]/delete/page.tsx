@@ -4,10 +4,10 @@
  */
 
 import { deleteRecord, getRecord } from "@/lib/anvil/actions";
-import { AnvilResource } from "@/lib/anvil/resource";
+import { AnvilResource } from "next-anvil/resource";
 import { redirect } from "next/navigation";
 import { notFound } from "next/navigation";
-import { DeleteResourceForm } from "@/components/admin/DeleteResourceForm";
+import { DeleteResourceForm } from "@/components/anvil/DeleteResourceForm";
 
 export default async function DeleteResourcePage({
   params,

@@ -3,10 +3,10 @@
  * Server Component - handles data fetching and server actions
  */
 
-import { CreateResourceForm } from "@/components/admin/CreateResourceForm";
+import { CreateResourceForm } from "@/components/anvil/CreateResourceForm";
 import { createRecord } from "@/lib/anvil/actions";
 import { redirect } from "next/navigation";
-import { AnvilResource } from "@/lib/anvil/resource";
+import { AnvilResource } from "next-anvil/resource";
 
 export default async function CreateResourcePage({
   params,

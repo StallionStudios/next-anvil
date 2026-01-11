@@ -1,4 +1,4 @@
-import { AnvilResource } from "@/lib/anvil/resource";
+import { AnvilResource } from "next-anvil/resource";
 
 export default async function ResourcePage({
   params,

@@ -3,9 +3,9 @@
  * Generic renderer that reads from resource.ts
  */
 
-import AnvilTable from "@/components/admin/AnvilTable";
+import AnvilTable from "@/components/anvil/AnvilTable";
 import Link from "next/link";
-import { AnvilResource } from "@/lib/anvil/resource";
+import { AnvilResource } from "next-anvil/resource";
 
 export default async function ResourceAdminPage({
   params,
