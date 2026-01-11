@@ -15,7 +15,7 @@ export async function forgeResource(name: string) {
 
   const resourceDir = path.join(
     process.cwd(),
-    "src/lib/resources",
+    "src/lib/anvil/resources",
     pluralLower
   );
 
