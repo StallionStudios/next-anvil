@@ -1,4 +1,4 @@
-import { BaseFieldOptions } from "./types";
+import type { BaseFieldOptions } from "./types";
 
 type SelectOptions = { label: string; value: string }[] | string[];
 

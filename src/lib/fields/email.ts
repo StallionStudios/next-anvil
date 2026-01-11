@@ -1,4 +1,4 @@
-import { BaseFieldOptions } from "./types";
+import type { BaseFieldOptions } from "./types";
 
 export interface EmailFieldOptions extends BaseFieldOptions {
     type: "email";

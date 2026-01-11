@@ -1,4 +1,4 @@
-import { BaseFieldOptions } from "./types";
+import type { BaseFieldOptions } from "./types";
 
 export interface DateFieldOptions extends BaseFieldOptions {
     minDate?: Date;

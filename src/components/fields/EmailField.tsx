@@ -3,7 +3,7 @@
  */
 
 import { FieldWrapper } from "./FieldWrapper";
-import { EmailFieldSchema } from "@/lib/fields";
+import type { EmailFieldSchema } from "@/lib/fields/email";
 
 interface EmailFieldProps {
   fieldName: string;

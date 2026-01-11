@@ -1,4 +1,4 @@
-import { BaseFieldOptions, FieldSize } from "./types";
+import type { BaseFieldOptions } from "./types";
 
 export interface TextFieldOptions extends BaseFieldOptions {
     unique?: boolean;

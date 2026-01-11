@@ -3,7 +3,7 @@
  */
 
 import { FieldWrapper } from "./FieldWrapper";
-import { SelectFieldSchema } from "@/lib/fields";
+import type { SelectFieldSchema } from "@/lib/fields/select";
 
 interface SelectFieldProps {
   fieldName: string;

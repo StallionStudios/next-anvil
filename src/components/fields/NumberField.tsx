@@ -3,7 +3,7 @@
  */
 
 import { FieldWrapper } from "./FieldWrapper";
-import { NumberFieldSchema } from "@/lib/fields";
+import type { NumberFieldSchema } from "@/lib/fields/number";
 
 interface NumberFieldProps {
   fieldName: string;

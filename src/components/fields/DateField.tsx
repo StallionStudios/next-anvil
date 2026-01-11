@@ -3,7 +3,7 @@
  */
 
 import { FieldWrapper } from "./FieldWrapper";
-import { DateFieldSchema } from "@/lib/fields";
+import type { DateFieldSchema } from "@/lib/fields/date";
 
 interface DateFieldProps {
   fieldName: string;

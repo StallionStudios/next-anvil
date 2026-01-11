@@ -1,4 +1,4 @@
-import { BaseFieldOptions } from "./types";
+import type { BaseFieldOptions } from "./types";
 
 export interface TextareaFieldOptions extends BaseFieldOptions {
     rows?: number;

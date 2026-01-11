@@ -3,7 +3,7 @@
  */
 
 import { FieldWrapper } from "./FieldWrapper";
-import { TextareaFieldSchema } from "@/lib/fields";
+import type { TextareaFieldSchema } from "@/lib/fields/textarea";
 
 interface TextareaFieldProps {
   fieldName: string;
