@@ -1,6 +1,6 @@
 {
   "name": "next-anvil",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "CLI tool for the Anvil framework - a Next.js framework for creating admin dashboards",
   "license": "ISC",
   "author": "Juan Sanchez <juan.sanchez@stallionstudios.net>",
@@ -23,7 +23,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc && tsc -p tsconfig.bin.json && node scripts/postbuild.js",
+    "build": "tsc && tsc-alias && tsc -p tsconfig.bin.json && tsc-alias -p tsconfig.bin.json && node scripts/postbuild.js",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -53,6 +53,7 @@
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "tailwindcss": "^4.1.18",
+    "tsc-alias": "^1.8.16",
     "tsx": "^4.7.0",
     "typescript": "^5.0.0"
   },
